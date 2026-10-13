@@ -1,0 +1,273 @@
+{
+  "routes": [
+    {
+      "route": "/home",
+      "redirect": "/",
+      "statusCode": 301
+    },
+    {
+      "route": "/about-us/privacy-policy",
+      "redirect": "/privacy/",
+      "statusCode": 301
+    },
+    {
+      "route": "/about-us",
+      "redirect": "/about/",
+      "statusCode": 301
+    },
+    {
+      "route": "/our-ethos",
+      "redirect": "/about/",
+      "statusCode": 301
+    },
+    {
+      "route": "/research",
+      "redirect": "/about/",
+      "statusCode": 301
+    },
+    {
+      "route": "/why-smhc",
+      "redirect": "/about/",
+      "statusCode": 301
+    },
+    {
+      "route": "/colleagues-feedback",
+      "redirect": "/careers/",
+      "statusCode": 301
+    },
+    {
+      "route": "/contact-us",
+      "redirect": "/contact/",
+      "statusCode": 301
+    },
+    {
+      "route": "/care-facilities",
+      "redirect": "/services/",
+      "statusCode": 301
+    },
+    {
+      "route": "/care-facilities/the-dallingtons-mental-health-hospital",
+      "redirect": "/services/the-dallingtons/",
+      "statusCode": 301
+    },
+    {
+      "route": "/care-facilities/st-matthews-hospital",
+      "redirect": "/services/st-matthews-hospital/",
+      "statusCode": 301
+    },
+    {
+      "route": "/care-facilities/broomhill-mental-health-hospital-2",
+      "redirect": "/services/althorp-grange/",
+      "statusCode": 301
+    },
+    {
+      "route": "/care-facilities/althorp-grange",
+      "redirect": "/services/althorp-grange/",
+      "statusCode": 301
+    },
+    {
+      "route": "/care-facilities/st-matthews-unit-care-home",
+      "redirect": "/services/st-matthews-unit/",
+      "statusCode": 301
+    },
+    {
+      "route": "/care-facilities/kingsthorpe-grange",
+      "redirect": "/services/kingsthorpe-grange/",
+      "statusCode": 301
+    },
+    {
+      "route": "/care-facilities/the-avenue-care-home",
+      "redirect": "/services/the-avenue/",
+      "statusCode": 301
+    },
+    {
+      "route": "/care-facilities/willowbrook-house-care-home",
+      "redirect": "/services/willowbrook-house/",
+      "statusCode": 301
+    },
+    {
+      "route": "/care-facilities/maple-leaf-house-nursing-care-home-coventry",
+      "redirect": "/services/maple-leaf-house/",
+      "statusCode": 301
+    },
+    {
+      "route": "/care-facilities/hawthorne-house-care-home-coventry",
+      "redirect": "/services/hawthorne-house/",
+      "statusCode": 301
+    },
+    {
+      "route": "/care-facilities/the-moreton-centre-nursing-care-home",
+      "redirect": "/services/the-moreton-centre/",
+      "statusCode": 301
+    },
+    {
+      "route": "/nursing-home-the-avenue",
+      "redirect": "/services/the-avenue/",
+      "statusCode": 301
+    },
+    {
+      "route": "/care-types",
+      "redirect": "/services/",
+      "statusCode": 301
+    },
+    {
+      "route": "/mental-health-hospitals",
+      "redirect": "/services/",
+      "statusCode": 301
+    },
+    {
+      "route": "/hospital-care",
+      "redirect": "/services/",
+      "statusCode": 301
+    },
+    {
+      "route": "/dementia-care",
+      "redirect": "/services/",
+      "statusCode": 301
+    },
+    {
+      "route": "/community-based-mdt-pathways",
+      "redirect": "/services/",
+      "statusCode": 301
+    },
+    {
+      "route": "/mental-health-nursing-care-homes",
+      "redirect": "/services/",
+      "statusCode": 301
+    },
+    {
+      "route": "/careers/register-your-interest",
+      "redirect": "/careers/",
+      "statusCode": 301
+    },
+    {
+      "route": "/careers/recruitment-event-for-nurses",
+      "redirect": "/careers/",
+      "statusCode": 301
+    },
+    {
+      "route": "/care-facilities/*",
+      "redirect": "/services/",
+      "statusCode": 301
+    },
+    {
+      "route": "/care-types/*",
+      "redirect": "/services/",
+      "statusCode": 301
+    },
+    {
+      "route": "/about-us/*",
+      "redirect": "/about/",
+      "statusCode": 301
+    },
+    {
+      "route": "/job-openings/*",
+      "redirect": "/careers/",
+      "statusCode": 301
+    },
+    {
+      "route": "/job-category/*",
+      "redirect": "/careers/",
+      "statusCode": 301
+    },
+    {
+      "route": "/job-type/*",
+      "redirect": "/careers/",
+      "statusCode": 301
+    },
+    {
+      "route": "/jobs/*",
+      "redirect": "/careers/",
+      "statusCode": 301
+    },
+    {
+      "route": "/2012/*",
+      "redirect": "/news/",
+      "statusCode": 301
+    },
+    {
+      "route": "/2013/*",
+      "redirect": "/news/",
+      "statusCode": 301
+    },
+    {
+      "route": "/2014/*",
+      "redirect": "/news/",
+      "statusCode": 301
+    },
+    {
+      "route": "/2015/*",
+      "redirect": "/news/",
+      "statusCode": 301
+    },
+    {
+      "route": "/2016/*",
+      "redirect": "/news/",
+      "statusCode": 301
+    },
+    {
+      "route": "/2017/*",
+      "redirect": "/news/",
+      "statusCode": 301
+    },
+    {
+      "route": "/2018/*",
+      "redirect": "/news/",
+      "statusCode": 301
+    },
+    {
+      "route": "/2019/*",
+      "redirect": "/news/",
+      "statusCode": 301
+    },
+    {
+      "route": "/2020/*",
+      "redirect": "/news/",
+      "statusCode": 301
+    },
+    {
+      "route": "/2021/*",
+      "redirect": "/news/",
+      "statusCode": 301
+    },
+    {
+      "route": "/2022/*",
+      "redirect": "/news/",
+      "statusCode": 301
+    },
+    {
+      "route": "/2023/*",
+      "redirect": "/news/",
+      "statusCode": 301
+    },
+    {
+      "route": "/2024/*",
+      "redirect": "/news/",
+      "statusCode": 301
+    },
+    {
+      "route": "/2025/*",
+      "redirect": "/news/",
+      "statusCode": 301
+    },
+    {
+      "route": "/2026/*",
+      "redirect": "/news/",
+      "statusCode": 301
+    }
+  ],
+  "responseOverrides": {
+    "404": {
+      "rewrite": "/404.html",
+      "statusCode": 404
+    }
+  },
+  "globalHeaders": {
+    "X-Content-Type-Options": "nosniff",
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    "X-Frame-Options": "SAMEORIGIN",
+    "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+    "Content-Security-Policy": "default-src 'self'; script-src 'self' https://www.cqc.org.uk https://*.cqc.org.uk; style-src 'self' 'unsafe-inline' https://www.cqc.org.uk https://*.cqc.org.uk; img-src 'self' data: https://www.cqc.org.uk https://*.cqc.org.uk; font-src 'self' https://www.cqc.org.uk https://*.cqc.org.uk; frame-src https://www.cqc.org.uk https://*.cqc.org.uk; connect-src 'self' https://www.cqc.org.uk https://*.cqc.org.uk; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
+  },
+  "trailingSlash": "always"
+}
