@@ -5,8 +5,8 @@ DirectoryIndex index.html
 Options -Indexes
 ErrorDocument 404 /404.html
 
-# The GitHub read-me is for IT, not for visitors
-RedirectMatch 404 ^/README\.md$
+# The GitHub read-me files are for IT and Claude, not for visitors
+RedirectMatch 404 ^/(README|CLAUDE)\.md$
 
 <IfModule mod_rewrite.c>
 RewriteEngine On
