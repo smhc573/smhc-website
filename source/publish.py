@@ -12,7 +12,7 @@ main branch, commits and pushes both. Add --no-push to try it without publishing
 """
 import os, sys, shutil, subprocess, tempfile
 
-KEEP = {".git", "README.md"}   # files on main that are not part of the website build
+KEEP = {".git", "README.md", "CLAUDE.md"}   # files on main that are not part of the website build
 
 
 def run(*cmd, cwd=None, check=True):

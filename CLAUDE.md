@@ -21,6 +21,12 @@ sync the `main` branch of this repository to the live site.
   `view/` page images 1240 px wide and `thumb/` covers 460 px wide).
 - `redirects.csv`: every old smhc.uk.com address and where it now goes.
 
+## Starting in a new session
+
+The repository is `smhc573/smhc-website` on GitHub (private). A fresh clone lands on `main`, so
+fetch this branch first: `git fetch origin source && git checkout -b source origin/source`.
+Publishing pushes to GitHub, and Blue Moon Solutions (Richard Foster) sync `main` to the live site.
+
 ## Making a change
 
 1. `git checkout source`
