@@ -3,6 +3,10 @@ sys.path.insert(0, os.path.dirname(__file__))
 from data import *
 from icons import ICONS
 
+def tel(p):
+    """A UK number such as 01604 754 654 as a tel: link target."""
+    return "tel:+44" + re.sub(r"\D", "", p)[1:]
+
 H = html.escape
 BYID = {s["id"]: s for s in SERVICES}
 MAP = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "map.json")))
@@ -295,7 +299,7 @@ def brochures_list():
 def hero_service(s):
     h = s["hero"]
     crumbs = f'<div class="crumbs"><a href="#home">Home</a><span aria-hidden="true">/</span><a href="#services">Our services</a><span aria-hidden="true">/</span><span>{H(s["name"])}</span></div>'
-    facts = f'<div class="facts"><span><b>{H(s["place"])}</b></span><span><b>{s["beds"]}</b> beds</span><span>{H(s["typeLabel"])}</span></div>'
+    facts = f'<div class="facts"><span><b>{H(s["place"])}</b></span><span><b>{s["beds"]}</b> beds</span><span>{H(s["typeLabel"])}</span><a class="ftel" href="{tel(s["phone"])}">{ic("phone")}<b>{H(s["phone"])}</b></a></div>'
     btns = f'<div class="btns"><a class="btn btn-light" href="#refer-form" data-svc="{s["id"]}">Make a referral {ar()}</a><a class="btn btn-line" href="#contact">Arrange a visit</a></div>'
     copy = (f'<div class="copy">{crumbs}<span class="eyebrow">{H(s["kicker"])}</span>'
             f'<h1 class="h1">{H(s["h1"][0])}<span class="ser">{H(s["h1"][1])}</span></h1>'
@@ -343,7 +347,7 @@ def v_service(s):
         bro = f'<div class="panel" id="{s["id"]}-brochure"><span class="k">Brochure</span>{bl}</div>'
     aside = f'''<aside class="aside" aria-label="Key details">
   <div class="panel dark"><span class="k">Make a referral</span><span class="big">{REF_PHONE}</span>{email_inline()}<span class="sm">One referral line and one inbox reach every service in the group.</span><a class="btn btn-light" href="#refer-form" data-svc="{s["id"]}" style="justify-content:center;margin-top:6px">Start a referral {ar()}</a></div>
-  <div class="panel"><span class="k">Address</span><span class="addr">{H(s["address"])}</span><div class="minimap">{map_svg(highlight=s["id"], interactive=False)}</div></div>
+  <div class="panel"><span class="k">Address</span><span class="addr">{H(s["address"])}</span><span class="k" style="margin-top:6px">Telephone</span><a class="ptel" href="{tel(s["phone"])}">{ic("phone")}<span>{H(s["phone"])}</span></a><span class="sm">{("The same number as our referral line." if s["phone"] == REF_PHONE else "To speak to the team at " + H(s["name"]) + ". Referrals go through the referral line.")}</span><div class="minimap">{map_svg(highlight=s["id"], interactive=False)}</div></div>
   <div class="panel" data-cqc-location="{s["cqc"].rsplit("/",1)[-1]}"><span class="k">Care Quality Commission</span><span class="addr">{H(s["name"])} is registered with the CQC{(" as " + chr(8220) + H(s["cqcName"]) + chr(8221)) if s.get("cqcDiff") else ""}. The CQC publishes its current rating and inspection reports.</span><a class="textlink" href="{s["cqc"]}" target="_blank" rel="noopener">Read the latest CQC report {ar()}</a></div>
   {review}{bro}
 </aside>'''
@@ -619,16 +623,16 @@ def v_careers():
 </section>'''
 
 def v_contact():
-    addr = "".join(f'<li><a href="#{s["id"]}"><span class="n">{H(s["name"])}</span><span class="m">{H(s["address"])}</span></a></li>' for s in SERVICES)
+    addr = "".join(f'<li><a href="#{s["id"]}"><span class="n">{H(s["name"])}</span><span class="m">{H(s["address"])}</span></a><a class="tel" href="{tel(s["phone"])}" aria-label="Call {H(s["name"])} on {H(s["phone"])}">{ic("phone")}<span>{H(s["phone"])}</span></a></li>' for s in SERVICES)
     return f'''<section class="view" data-view="contact" aria-label="Contact" hidden>
-<div class="phero navy"><div class="wrap on-navy"><div class="crumbs"><a href="#home">Home</a><span aria-hidden="true">/</span><span>Contact</span></div><span class="eyebrow">Contact</span><h1 class="h1">Talk to us.<span class="ser">One line, every service.</span></h1><p class="lede">Referrals, enquiries and visits all start in the same place, so nothing waits in the wrong inbox.</p></div></div>
+<div class="phero navy"><div class="wrap on-navy"><div class="crumbs"><a href="#home">Home</a><span aria-hidden="true">/</span><span>Contact</span></div><span class="eyebrow">Contact</span><h1 class="h1">Talk to us.<span class="ser">One referral line, every service.</span></h1><p class="lede">Referrals all start in the same place, so nothing waits in the wrong inbox. To speak to a service directly, every service&#x27;s own number is listed below.</p></div></div>
 <section class="sec"><div class="wrap"><div class="twocol">
   <div class="panel dark" style="padding:32px"><span class="k">Referral line</span><span class="big" style="font-size:2.6rem">{REF_PHONE}</span><span class="k" style="margin-top:14px">Referral email</span>{email_inline()}<span class="sm">For referrals, enquiries and to arrange a visit to any service.</span><a class="btn btn-light" href="#refer-form" style="justify-content:center;margin-top:10px">Start a referral {ar()}</a></div>
   <div style="display:flex;flex-direction:column;gap:16px"><span class="eyebrow">Arrange a visit</span><h2 class="h2">See it <em>for yourself.</em></h2><p>Commissioners and families are welcome to visit. Call or email, tell us which service you would like to see, and we will arrange it with the service.</p><span class="eyebrow" style="margin-top:12px">Registered office</span><p>{H(GROUP["office"])}</p><span class="eyebrow" style="margin-top:12px">Careers</span><p>Enquiries about working with us go to our recruitment team at <a class="brk" href="mailto:{REC_EMAIL}">{REC_EMAIL}</a>.</p><a class="textlink" href="#careers-roles">Roles across our services {ar()}</a></div>
 </div></div></section>
 <section class="sec cream"><div class="wrap"><div class="where">
   <div class="mapbox">{map_svg(interactive=False)}</div>
-  <div class="region"><h3><span>Our addresses</span><span>10 services</span></h3><ul>{addr}</ul></div>
+  <div class="region"><h3><span>Addresses and numbers</span><span>10 services</span></h3><ul class="addrs">{addr}</ul></div>
 </div></div></section>
 </section>'''
 
@@ -708,7 +712,7 @@ def typo(html_):
         t = re.sub(r'\b([A-Z]{1,2}\d[A-Z\d]?) (\d[A-Z]{2})\b', '\\1&nbsp;\\2', t)
         t = t.replace('St Leonards-on-Sea', '<span class="nw">St Leonards-on-Sea</span>')
         t = t.replace('Speak up. Listen up. Follow up.', '<span class="nw">Speak up.</span> <span class="nw">Listen up.</span> <span class="nw">Follow up.</span>')
-        if 'class="big"' not in parts[k - 1] and 'class="f"' not in parts[k - 1]: t = t.replace('01604 844 192', '01604&nbsp;844&nbsp;192')
+        if 'class="big"' not in parts[k - 1] and 'class="f"' not in parts[k - 1]: t = re.sub(r'\b(0\d{4}) (\d{3}) (\d{3})\b', '\\1&nbsp;\\2&nbsp;\\3', t)
         t = re.sub(r'\b(\d{1,2}) (January|February|March|April|May|June|July|August|September|October|November|December)\b', '\\1&nbsp;\\2', t)
         parts[k] = t
     return "".join(parts)

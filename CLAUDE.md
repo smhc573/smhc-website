@@ -44,7 +44,9 @@ Publishing pushes to GitHub, and Blue Moon Solutions (Richard Foster) sync `main
 ## House rules, never broken
 
 - Contacts: the referral line 01604 844 192 and smhc.referrals@nhs.net for referrals, and
-  recruitment@smhc.uk.com for careers. No other phone numbers, no manager names, no direct dials.
+  recruitment@smhc.uk.com for careers. Each service also shows its own main number (`phone` in
+  `data.py`, from Phil's Site Addresses list, 15 October 2026) in its page header, its Address
+  panel and the Contact page list. No other phone numbers, no manager names or emails, no direct dials.
 - No fees or prices anywhere.
 - Never type a CQC rating by hand. The official CQC widget on every service page stays: the law
   (Regulation 20A) requires current ratings on the website.

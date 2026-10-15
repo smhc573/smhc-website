@@ -162,7 +162,7 @@ def service_ld(s, path):
     region = bits.pop() if bits[-1] in ("Northamptonshire", "East Sussex") else ""
     loc = bits[-1] if len(bits) > 1 else town(s)
     return [{"@context": "https://schema.org", "@type": "MedicalOrganization", "name": s["name"], "url": SITE_URL + "/" + path,
-             "description": trim(s["stand"]), "telephone": "+44 1604 844192", "email": REF_EMAIL,
+             "description": trim(s["stand"]), "telephone": "+44" + re.sub(r"\D", "", s["phone"])[1:], "email": REF_EMAIL,
              "address": {"@type": "PostalAddress", "streetAddress": ", ".join(bits[:-1]) if len(bits) > 1 else street,
                          "addressLocality": loc, **({"addressRegion": region} if region else {}), "postalCode": pc.group(1) if pc else "", "addressCountry": "GB"},
              "parentOrganization": {"@id": SITE_URL + "/#organisation"}},

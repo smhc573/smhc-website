@@ -166,6 +166,11 @@ nav.main a.btn:hover{color:#fff}
 .region li a:hover .n{color:var(--blue-deep)}
 .region .n{font-family:var(--display);font-weight:600;font-size:1.5rem;line-height:1.1}
 .region .m{font-size:.875rem;color:var(--ink-2);text-align:right}
+.region .addrs li{display:flex;flex-direction:column;gap:6px;padding:13px 0;border-bottom:var(--hair)}
+.region .addrs li a{padding:0;border-bottom:0}
+.region .addrs li a.tel{display:inline-flex;align-items:center;gap:7px;align-self:flex-end;font-size:.9375rem;font-weight:600;color:var(--blue-deep);font-variant-numeric:lining-nums}
+.region .addrs .tel .ic{width:15px;height:15px;flex:none}
+.region .addrs li a.tel:hover span{text-decoration:underline;text-underline-offset:3px}
 @media (max-width:900px){ .where{grid-template-columns:1fr} }
 
 /* pathway band */
@@ -296,6 +301,9 @@ footer.site .base{border-top:1px solid rgba(255,255,255,.12);padding-block:22px 
 .shero .stand{font-size:1.15rem;line-height:1.6;color:var(--on-navy);max-width:56ch}
 .shero .facts{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:.875rem;color:var(--on-navy-2)}
 .shero .facts b{color:#fff;font-weight:600}
+.shero .facts .ftel{display:inline-flex;align-items:center;gap:6px;color:inherit;text-decoration:none}
+.shero .facts .ftel .ic{width:15px;height:15px;color:var(--blue-lt);flex:none}
+.shero .facts .ftel:hover b{text-decoration:underline;text-underline-offset:3px}
 .shero.bleed{min-height:600px;display:flex;align-items:flex-end}
 .shero.bleed .bg{position:absolute;inset:0}
 .shero.bleed .bg img{width:100%;height:100%;object-fit:cover}
@@ -336,6 +344,9 @@ footer.site .base{border-top:1px solid rgba(255,255,255,.12);padding-block:22px 
 .panel .big{font-family:var(--display);font-weight:600;font-size:1.85rem;line-height:1.05;color:var(--navy);font-variant-numeric:lining-nums}
 .panel.dark .big{color:#fff}
 .panel .addr{font-size:.9375rem}
+.panel .ptel{display:inline-flex;align-items:center;gap:9px;align-self:flex-start;font-family:var(--display);font-weight:600;font-size:1.6rem;line-height:1.1;color:var(--navy);text-decoration:none;font-variant-numeric:lining-nums}
+.panel .ptel .ic{width:19px;height:19px;color:var(--blue-deep);flex:none}
+.panel .ptel:hover span{text-decoration:underline;text-underline-offset:3px}
 .panel .sm{font-size:.8125rem;color:var(--ink-2)}
 .panel.dark .sm{color:var(--on-navy-2)}
 .panel .score{display:flex;align-items:baseline;gap:6px}
@@ -546,6 +557,7 @@ form.ref .full{grid-column:1 / -1}
   .rail .f.em{font-size:clamp(1.3rem,6.4vw,1.7rem);overflow-wrap:normal}
   .region li a{grid-template-columns:1fr;gap:3px;padding:14px 0}
   .region .m{text-align:left}
+  .region .addrs li a.tel{align-self:flex-start}
   .h1{line-height:1.06}
   .h2{line-height:1.13}
   .scard .tag,table.mx th{font-size:.75rem}
